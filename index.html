@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get("code");
+
+        onload=() => {
+            if(code !== null) {
+                if (typeof code === "string") {
+                    eval(code);
+                } else {
+                    alert("the code parameter you provided is not valid");
+                }
+            } else {
+                alert("the code parameter needs to be specified");
+            }
+        };
+    </script>
+</body>
+</html>
